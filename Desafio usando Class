@@ -67,8 +67,9 @@ estante = new Library()
 estante.addBook({title:'Fragmentos de Horror', descrip:'Contos de horror escritos por Junji Ito', author:'Junji Ito'})
 estante.addBook({title:'Viagem ao Centro Da Terra', descrip:'Uma aventura em que o cara vai muito fundo', author:'Julio Verne'})
 
-estante.getBookByID('Fragmentos de Horro')
+estante.getBookByID('Fragmentos de Horror')
 estante.getBook()
 
 estante.removeBookByID("Fragmentos de Horror")
+estante.getBookByID('Fragmentos de Horror')
 estante.updateBookByID({title:'Viagem ao Centro Da Terra', descrip:'Uma aventura em que o cara vai muito fundo, até demais', author:'Julio Verne'})
