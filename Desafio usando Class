@@ -1,0 +1,74 @@
+class Book {
+    constructor(title, descrip, author){
+        this.title = title
+        this.author = author
+        this.descrip = descrip
+        this.id = title
+        
+    } 
+}
+
+class Library { 
+    constructor(){
+        this.books = []
+    }
+
+    addBook(Info) {
+        let book = new Book(Info['title'], Info['descrip'], Info('author')) 
+        this.books.push(book)
+        return
+    }
+
+    getBook(){
+        console.log(this.books)
+        return
+    }
+    removeBookByID(id){
+        for (let i = 0; i < this.books.length; i++ ) {
+            if(this.books[i].title === id) {
+                this.books.splice(i,1)
+                console.log('Livro ' +id+ ' foi removido de Library' )
+                return
+            }
+        }
+        console.log('Livro inexistente')
+    }   
+    getBookByID(id) {
+        for (let i = 0; i < this.books.length; i++ ) {
+            if(this.books[i].title === id){
+                console.log("Livro " +id+ " encontrado!")
+                return
+            } 
+                
+        }
+        
+        console.log("Livro não encontrado")
+        }
+    updateBookByID(id, update) {
+        for (let i = 0; i < this.books.length; i++ ){
+            if(this.books[i].title === id){
+                this.books[i].title = update['title']
+                this.books[i].author = update['author']
+                this.books[i].descrip = descrip['descrip']
+                console.log("Atualizado!")
+                return
+            }
+        }
+        console.log("Livro não existente")
+             
+            
+        
+    }
+    
+}
+
+estante = new Library()
+
+estante.addBook({title:'Fragmentos de Horror', descrip:'Contos de horror escritos por Junji Ito', author:'Junji Ito'})
+estante.addBook({title:'Viagem ao Centro Da Terra', descrip:'Uma aventura em que o cara vai muito fundo', author:'Julio Verne'})
+
+estante.getBookByID('Fragmentos de Horro')
+estante.getBook()
+
+estante.removeBookByID("Fragmentos de Horror")
+estante.updateBookByID({title:'Viagem ao Centro Da Terra', descrip:'Uma aventura em que o cara vai muito fundo, até demais', author:'Julio Verne'})
